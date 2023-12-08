@@ -1,18 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MovieHeader/>
+    
+    <Suspense timeout="2">
+      <template #default>
+        <movie-card/>
+      </template>
+
+
+      <template #fallback>
+        <div>
+          Loading...
+        </div>
+      </template>
+    </Suspense>
+
+     
+
+   
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import { defineAsyncComponent } from 'vue';
+
+const MovieCard = defineAsyncComponent(()=> import('@/components/MovieCard.vue'))
+const MovieHeader = defineAsyncComponent(()=> import('@/components/MovieHeader.vue'))
+
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+     MovieHeader,
+    MovieCard
   }
 }
 </script>
