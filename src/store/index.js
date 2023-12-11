@@ -40,6 +40,8 @@ export default createStore({
       
         const response = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?language=pt-br&page=${data.page}`,config)
         commit('SET_Movie',response.data.results)
+
+        return response.data.results
         
 
      },
