@@ -1,4 +1,5 @@
 # movie-app
+<img src="https://github.com/pedrozau/MovieApp/blob/main/Screenshot%20from%202024-01-28%2018-32-43.png">
 
 ## Project setup
 ```
